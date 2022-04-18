@@ -7,6 +7,11 @@ Often when you create a database, you will find it necessary to add extra tables
 
 Please note, you will not be using this command in the SQLite environment, this command is to be used at the TERMINAL (unix) prompt in your Docker container. The below command will be necessary to build the database from with a UNIX or Docker environment.
 cat proteinDB2 build.txt | sqlite3 proteinDB2.sqlite3
+
+# How to run this builder
+
+cat proteinDB2_build.txt | sqlite3 proteinDB2.sqlite3 
+
 # Reference
 Your database is to contain the data from the following sources. This implies that this database will have four tables in total.
 • From last lab, n-protein: https://www.uniprot.org/uniprot/?query=n-protein&sort= score
