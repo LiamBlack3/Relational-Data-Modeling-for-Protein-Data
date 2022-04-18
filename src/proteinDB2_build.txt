@@ -1,0 +1,86 @@
+/* Lab 3 Assignment */
+/* Researching and Reporting on Database Tools */
+
+/* Name */
+/* Liam Black*/
+
+/* GitHub Account Name */
+/* Liam Black3 */
+
+/* Submission Date */
+/* Date: 28 March 2022 */
+
+/* A database builder file; edit as necessary */
+/* To Run build the database, make sure that your tab data files (obtained from Uniprot) are found in the _data/_ directory. */
+
+
+
+
+/* Create your tables. Modify the below code to create your tables. */
+drop table nprot;
+create table nprot (
+	protID VARCHAR NOT NULL PRIMARY KEY,
+	entryName VARCHAR NOT NULL ,
+	Status VARCHAR NOT NULL ,
+	ProteinName VARCHAR NOT NULL ,
+	GeneName VARCHAR NOT NULL ,
+	Organism VARCHAR NOT NULL ,
+	Length VARCHAR NOT NULL
+);
+drop table sprot;
+create table sprot (
+	protID VARCHAR NOT NULL PRIMARY KEY,
+	entryName VARCHAR NOT NULL ,
+	Status VARCHAR NOT NULL ,
+	ProteinName VARCHAR NOT NULL ,
+	GeneName VARCHAR NOT NULL ,
+	Organism VARCHAR NOT NULL ,
+	Length VARCHAR NOT NULL
+);
+
+create table sars (
+	protID VARCHAR NOT NULL PRIMARY KEY,
+	entryName VARCHAR NOT NULL ,
+	Status VARCHAR NOT NULL ,
+	ProteinName VARCHAR NOT NULL ,
+	GeneName VARCHAR NOT NULL ,
+	Organism VARCHAR NOT NULL ,
+	Length VARCHAR NOT NULL
+);
+
+create table mprot (
+	protID VARCHAR NOT NULL PRIMARY KEY,
+	entryName VARCHAR NOT NULL ,
+	Status VARCHAR NOT NULL ,
+	ProteinName VARCHAR NOT NULL ,
+	GeneName VARCHAR NOT NULL ,
+	Organism VARCHAR NOT NULL ,
+	Length VARCHAR NOT NULL
+);
+
+	
+
+/* Import your data files. Use the below `.import` code to populate the tables from above. */
+
+
+
+/* If your data is not separated by tabs, then change the following line to reflect the delimiter. */
+
+.separator "\t"
+
+
+/* Import the data files.*/
+
+.import data/uniprot_m_protein.tab mprot
+.import data/uniprot_n_protein.tab nprot
+.import data/uniprot_s_protein.tab sprot
+.import data/uniprot_sars.tab sars
+
+
+
+
+
+
+
+/* How to run this builder */
+/* cat proteinDB2_build.txt | sqlite3 proteinDB2.sqlite3 */
